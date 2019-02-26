@@ -4,15 +4,16 @@
 * ~~variable tipo tabla~~
 * ~~columna~~
 * ~~vistas~~
-* vistas indexadas 
 * ~~merge~~ 
 * ~~StoreProcedures~~ 
 * ~~Partition By~~
-* indices
+* ~~indices~~
 * ~~planes de ejecucion~~
 * ~~Seguridad~~ sin encriptar 
 * SQL Profiles 
-* Documentacion Documentacion Microsoft. 
+
+
+
 
 -----------------------------------------------------------------------------------------
 ## __Tipo de Datos en SQL__ 
@@ -357,3 +358,4 @@ Conclución:
 * Los índices agrupados sólo ordenan tablas. Por lo tanto, no consumen almacenaje extra. 
 * Los índices no agrupados son almacenados en un lugar separado de la tabla real. Reclamando más espacio de almacenamiento.
 * Los índices agrupados son más rápidos que los índices no agrupados, ya que no involucran ningún paso extra de búsqueda.
+
