@@ -1,22 +1,23 @@
-# __Investigación/Practica SQL__ 
+# __Investigación SQL__ 
 
-* ~~Tipos de datos en SQL~~
-* ~~variable tipo tabla~~
-* ~~columna~~
-* ~~vistas~~
-* ~~merge~~ 
-* ~~StoreProcedures~~ 
-* ~~Partition By~~
-* ~~indices~~
-* ~~planes de ejecucion~~
-* ~~Seguridad~~ sin encriptar 
+En este documento, se hace una breve descripción con ejemplos de diferentes temas a tratar en SQL. 
+
+* Tipo de Datos en SQL
+* Variables Tipo Tabla
+* Vistas
+* Merge
+* Funciones
+* Stored Procedures
+* Partition By
+* Planes de Ejecución
+* Seguridad
+* Indices
 * SQL Profiles 
-
-
-
 
 -----------------------------------------------------------------------------------------
 ## __Tipo de Datos en SQL__ 
+
+Un tipo de datos es un atributo que especifica el tipo de datos que el objeto puede contener: datos enteros, datos de caracteres, datos monetarios, datos de fecha y hora, cadenas binarias, etc.
 
 #### __Creación de tipo de datos:__ 
     CREATE TYPE nombretipodedato FROM tipodedato(x) NOT NULL 
@@ -34,7 +35,7 @@
     DROP type nombretipodedato 
 _(Para poder eliminarlo ninguna tabla tiene que usar el tipo de dato a elimminar.)_ 
 
-## __Variales Tipo Tabla__
+## __Variables Tipo Tabla__
 
 ### __Características:__
 * Las Variables Tipo Tabla son tipos de datos que generalmente son utilizados en un lote T-SQL,  procedimiento almacenado o función definida por el usuario.
@@ -99,6 +100,8 @@ Una vista es una tabla virtual cuyo contenido está definido por una consulta, �
 
 ## __Merge__
 
+Se usa sentencias SQL MERGE para INSERTAR nuevos registros o ACTUALIZAR registros existentes dependiendo de si una condición coincide.
+
 #### __Ejemplo__
 Estructura: Codigo INT PRIMARY KEY,
 Nombre VARCHAR(100),
@@ -146,6 +149,8 @@ Puntos INT
     DELETE 
 
 ## __Funciones__
+
+Una función es un conjunto de sentencias que operan como una unidad lógica. Una función tiene un nombre, retorna un parámetro de salida y opcionalmente acepta parámetros de entrada. Las funciones de SQL Server no pueden ser modificadas, las funciones definidas por el usuario si.
 
  ### __Funciones agregadas SQL, devuelven un sólo valor, calculado con los valores de una columna.__
 
@@ -219,7 +224,10 @@ Puntos INT
             WHERE  Invb.idlibro = @idLibro) 
     * Ejecución: SELECT Count(Invb.Nombre_Libro) FROM Salidas_libro ('ISBN00000000')
 
-## Stored Procedures
+## __Stored Procedures__
+
+Un procedimiento almacenado es un código SQL preparado que puede guardar, por lo que el código puede reutilizarse una y otra vez.
+Se les puede pasar parametros, de modo que el procedimiento almacenado pueda actuar en función de los valores que se pasan.
 
 #### __Creación__
         USE BaseDeDatos; 
@@ -359,3 +367,10 @@ Conclución:
 * Los índices no agrupados son almacenados en un lugar separado de la tabla real. Reclamando más espacio de almacenamiento.
 * Los índices agrupados son más rápidos que los índices no agrupados, ya que no involucran ningún paso extra de búsqueda.
 
+## __SQL Profiles__
+
+SQL Server Profiler es una interfaz para crear y administrar rastreos y analizar y reproducir resultados de rastreo. Los eventos se guardan en un archivo de seguimiento que luego se puede analizar o usar para reproducir una serie específica de pasos cuando se intenta diagnosticar un problema.
+
+https://docs.microsoft.com/en-us/sql/tools/sql-server-profiler/sql-server-profiler?view=sql-server-2017
+
+*** Ampliar más información 
